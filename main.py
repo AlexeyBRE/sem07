@@ -10,22 +10,21 @@
 #
 # **Ввод:** пара-ра-рам рам-пам-папам па-ра-па-да
 #     **Вывод:** Парам пам-пам
-def rhythm(obj, lists):
+def rhythm(obj):
+    pharse_list = []
     obj = obj.split()
     for i in obj:
         count = 0
         for j in i:
             if j == 'а':
                 count += 1
-        lists.append(count)
-    return lists
+        pharse_list.append(count)
+    return set(pharse_list)
 
 
 
 pharse = 'пара-ра-рам рам-пам-папам па-ра-па-дам'
-pharse_list = []
-rhythm(pharse,pharse_list)
-print(len(set(pharse_list)))
-if len(set(pharse_list)) == 1:
+
+if len(rhythm(pharse)) == 1:
     print('Парам пам-пам')
 else:print('Пам парам')
